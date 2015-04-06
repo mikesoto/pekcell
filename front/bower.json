@@ -1,0 +1,9 @@
+{
+  "name": "front",
+  "private": true,
+  "dependencies": {
+    "bootstrap-sass-official": "~3.2.0",
+    "fontawesome": "~4.3.0",
+    "skrollr": "~0.6.29"
+  }
+}

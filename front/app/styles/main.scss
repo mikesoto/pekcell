@@ -1,0 +1,173 @@
+$icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
+// bower:scss
+@import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
+// endbower
+
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,900);
+@import url(http://fonts.googleapis.com/css?family=Playfair+Display:400,700,900);
+
+body{
+  font-family: 'Roboto', sans-serif;
+}
+
+header{
+  margin-top: 50px;
+  margin-bottom: 30px;
+  .navbar-collapse{
+    padding: 0;
+  }
+  .navbar{
+    margin-bottom: 0;
+    border-radius: 0;
+    border: 0;
+    .navbar-brand{
+      margin-top: -30px;
+      text-indent: -9999px;
+      display: inline-block;
+      width: 150px;
+      height: 106px;
+      background: {
+        image: url('../images/logo.png');
+        size: 150px 106px;
+      }
+    }
+    .navbar-nav{
+      background: #64a9d0;
+    }
+  }
+  .nav{
+    & > li{
+      & > a{
+        color: white;
+        font-weight: 300;
+        &:hover,
+        &:active{
+          background-color: #478bb1;
+        }
+      }
+    }
+  }
+}
+
+.carousel-inner{
+  & > .item{
+    & > a {
+      & > img{
+        width: 100%;
+      }
+    }
+    & > img{
+      width: 100%;
+    }
+  }
+}
+
+#logos{
+  padding-top: 30px;
+  font-family: 'Playfair Display', serif;
+  font-weight: bold;
+  text-align: center;
+  background: {
+    image: url('../images/block-bg.png');
+  }
+  .logo{
+    background: white;
+    padding: 20px;
+    margin: 20px 0;
+    box-shadow: 2px 3px 4px 4px #474747;
+    border-radius: 1px;
+    opacity: 0.95;
+    img{
+      max-width: 100%;
+      margin-bottom: 20px;
+    }
+  }
+  p{
+    font-size: 20px;
+  }
+}
+
+.form{
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-align: left;
+  background: white;
+  padding: 10px;
+  margin-top: 20px;
+  span{
+    display: inline-block;
+  }
+  input{
+    font-weight: 300;
+    margin-top: 15px;
+  }
+  .button{
+    margin-top: 15px;
+  }
+}
+
+.logo{
+  img{
+    max-width: 50%;
+  }
+}
+
+#logos2{
+  padding: 80px 0;
+  //font-family: 'Playfair Display', serif;
+  font-weight: bold;
+  text-align: center;
+  background:{
+    image: url('../images/background-blue.jpg');
+    size: 100%;
+    position: 50% 50%;
+  }
+  .logo {
+    position: relative;
+    margin: 20px 0;
+    background: {
+      position: 50% 50%;
+      size: 100%;
+    }
+    transition: all .4s ease;
+    img{
+      max-width: 100%;
+      width: 100%;
+      opacity: 0;
+      transform: rotateY(360deg);
+    }
+    p{
+      opacity: 0;
+      transition: all .4s ease;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 20px;
+      right: 20px;
+    }
+    &:hover{
+      background:{
+        size: 110%;
+      }
+      &:before{
+        position: absolute;
+        content: '';
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 2;
+      }
+      p{
+        opacity: 1;
+        color: white;
+        z-index: 3;
+        text-align: center;
+        text-shadow: 3px 3px #000000;
+      }
+      img{
+        transform: rotateY(180deg);
+      }
+    }
+  }
+}
