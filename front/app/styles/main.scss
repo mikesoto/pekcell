@@ -12,7 +12,6 @@ body{
 
 header{
   margin-top: 50px;
-  margin-bottom: 30px;
   .navbar-collapse{
     padding: 0;
   }
@@ -21,14 +20,21 @@ header{
     border-radius: 0;
     border: 0;
     .navbar-brand{
-      margin-top: -30px;
+      margin-top: -60px;
       text-indent: -9999px;
       display: inline-block;
-      width: 150px;
-      height: 106px;
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      margin-bottom: -120px;
+      z-index: 99;
+      position: relative;
       background: {
         image: url('../images/logo.png');
+        repeat: no-repeat;
         size: 150px 106px;
+        position: 50% 50%;
+        color: white;
       }
     }
     .navbar-nav{
@@ -103,11 +109,13 @@ header{
   .button{
     margin-top: 15px;
   }
-}
-
-.logo{
-  img{
-    max-width: 50%;
+  button{
+    background: #115281;
+    color: white;
+    border-radius: 0;
+    &:hover{
+      color: white;
+    }
   }
 }
 
@@ -127,6 +135,7 @@ header{
     background: {
       position: 50% 50%;
       size: 100%;
+      color: white;
     }
     transition: all .4s ease;
     img{
@@ -168,6 +177,51 @@ header{
       img{
         transform: rotateY(180deg);
       }
+    }
+  }
+}
+
+
+footer{
+  background: #00365C;
+  color: white;
+  a{
+    color: white;
+    padding: 5px 0;
+    display: inline-block;
+    &:before{
+      font: normal normal normal 14px/1 FontAwesome;
+      content: "\f054";
+      padding-right: 5px;
+    }
+  }
+  ul{
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+  }
+  .logo{
+    text-align: center;
+    background: white;
+    display: table-cell;
+    border-radius: 50%;
+    width: 155px;
+    height: 155px;
+    vertical-align: middle;
+    margin-top: 15px;
+    box-shadow: 3px 3px 6px 4px rgb(3, 48, 68);
+    img{
+      max-width: 90%;
+    }
+  }
+  .logo-wrapper{
+    margin-top: -30px;
+  }
+  .footer{
+    background: #001C30;
+    p{
+      font-size: 13px;
+      padding: 10px 0;
     }
   }
 }
