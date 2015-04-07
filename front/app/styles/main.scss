@@ -77,12 +77,10 @@ header{
     image: url('../images/block-bg.png');
   }
   .logo{
-    background: white;
     padding: 20px;
     margin: 20px 0;
     box-shadow: 2px 3px 4px 4px #474747;
     border-radius: 1px;
-    opacity: 0.95;
     img{
       max-width: 100%;
       margin-bottom: 20px;
@@ -132,17 +130,13 @@ header{
   .logo {
     position: relative;
     margin: 20px 0;
-    background: {
-      position: 50% 50%;
-      size: 100%;
-      color: white;
-    }
-    transition: all .4s ease;
     img{
       max-width: 100%;
       width: 100%;
-      opacity: 0;
-      transform: rotateY(360deg);
+      transition: all .4s ease;
+    }
+    &:before{
+      transition: all .4s ease;
     }
     p{
       opacity: 0;
@@ -154,9 +148,6 @@ header{
       right: 20px;
     }
     &:hover{
-      background:{
-        size: 110%;
-      }
       &:before{
         position: absolute;
         content: '';
@@ -166,6 +157,7 @@ header{
         bottom: 0;
         background: rgba(0, 0, 0, 0.5);
         z-index: 2;
+        transform: scale(1.1, 1.1);
       }
       p{
         opacity: 1;
@@ -175,7 +167,7 @@ header{
         text-shadow: 3px 3px #000000;
       }
       img{
-        transform: rotateY(180deg);
+        transform: scale(1.1, 1.1);
       }
     }
   }

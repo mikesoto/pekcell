@@ -1,2 +1,2 @@
 console.log('\'Allo \'Allo!');
-skrollr.init();
+skrollr.init({forceHeight: false});
