@@ -26,11 +26,11 @@
             </ul>
           </div>
           <div class="col-sm-3">
-            <div class="logo">
+            <div class="logo hidden-sm hidden-xs">
               <img width="100px" height="100px" src="<?php echo get_template_directory_uri(); ?>/images/LogoPekCell.png">
             </div>
           </div>
-          <div class="col-sm-3">
+          <div class="col-sm-3 hidden-sm hidden-xs">
             <div class="form">
               <h4>Ingrese a su Oficina Virtual</h4>
               <form>
