@@ -46,7 +46,7 @@ function pekcell_setup() {
 	 *
 	 * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
 	 */
-	//add_theme_support( 'post-thumbnails' );
+	add_theme_support( 'post-thumbnails' );
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
@@ -138,4 +138,49 @@ require get_template_directory() . '/inc/customizer.php';
 require get_template_directory() . '/inc/jetpack.php';
 
 
-add_theme_support( 'post-thumbnails' );
+add_action( 'init', 'pekcell_slides_init' );
+/**
+ * Register a slides post type.
+ *
+ * @link http://codex.wordpress.org/Function_Reference/register_post_type
+ */
+function pekcell_slides_init() {
+	$labels = array(
+		'name'               => _x( 'Slides', 'post type general name', 'pekcell' ),
+		'singular_name'      => _x( 'Slide', 'post type singular name', 'pekcell' ),
+		'menu_name'          => _x( 'Slides', 'admin menu', 'pekcell' ),
+		'name_admin_bar'     => _x( 'Slide', 'add new on admin bar', 'pekcell' ),
+		'add_new'            => _x( 'Add New', 'Slide', 'pekcell' ),
+		'add_new_item'       => __( 'Add New Slide', 'pekcell' ),
+		'new_item'           => __( 'New Slide', 'pekcell' ),
+		'edit_item'          => __( 'Edit Slide', 'pekcell' ),
+		'view_item'          => __( 'View Slide', 'pekcell' ),
+		'all_items'          => __( 'All Slides', 'pekcell' ),
+		'search_items'       => __( 'Search Slides', 'pekcell' ),
+		'parent_item_colon'  => __( 'Parent Slides:', 'pekcell' ),
+		'not_found'          => __( 'No slides found.', 'pekcell' ),
+		'not_found_in_trash' => __( 'No slides found in Trash.', 'pekcell' )
+	);
+
+	$args = array(
+		'labels'             => $labels,
+		'public'             => true,
+		'publicly_queryable' => true,
+		'show_ui'            => true,
+		'show_in_menu'       => true,
+		'query_var'          => true,
+		'rewrite'            => array( 'slug' => 'slide' ),
+		'capability_type'    => 'post',
+		'has_archive'        => true,
+		'hierarchical'       => false,
+		'menu_position'      => null,
+		'supports'           => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments' )
+	);
+
+	register_post_type( 'slide', $args );
+}
+
+
+
+
+
